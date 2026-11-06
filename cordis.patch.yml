@@ -1,0 +1,8 @@
+# dsh-aidrama bundle patch: inserts the plugin row into the profile roster.
+# The host half (exports ".") registers the loopback bridge routes and the
+# system-prompt guidance; the `dsh.client` declaration in package.json makes the
+# browser half (exports "./client") load in the web GUI and register the
+# `conversation.view` entry.
+- insert:
+    - id: dsh-aidrama
+      name: dsh-aidrama

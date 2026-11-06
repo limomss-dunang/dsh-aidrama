@@ -1,0 +1,25 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies (also builds lib/ via prepare)
+        run: npm install
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build host + client bundles
+        run: npm run build

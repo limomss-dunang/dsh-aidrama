@@ -1,0 +1,71 @@
+{
+  "name": "dsh-aidrama",
+  "version": "0.2.0",
+  "private": true,
+  "description": "AI 短剧工坊：侧边栏进入的「构想 → 总纲 → 资产 → 分集 → 分镜 → 提示词 → 生产台账 → 质检」结构化制片台（DeepSeek Harness plugin）",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./icon": "./icon.svg"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "docs"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "tsdown --watch --config tsdown.client.config.ts",
+    "typecheck": "tsc --noEmit",
+    "prepare": "node scripts/build.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.0",
+    "@types/react": "~18.3.1",
+    "@types/react-dom": "^18.3.5",
+    "@types/three": "^0.180.0",
+    "jsdom": "^26.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsdown": "^0.23.0",
+    "typescript": "~5.7.2"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "cordis",
+    "plugin",
+    "short-drama",
+    "manju",
+    "storyboard",
+    "prompt",
+    "cordis-plugin",
+    "seedance"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "react-zoom-pan-pinch": "^3.7.0",
+    "three": "^0.180.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limomss-dunang/dsh-aidrama.git"
+  },
+  "bugs": {
+    "url": "https://github.com/limomss-dunang/dsh-aidrama/issues"
+  },
+  "homepage": "https://github.com/limomss-dunang/dsh-aidrama#readme"
+}

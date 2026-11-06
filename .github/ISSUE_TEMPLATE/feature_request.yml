@@ -1,0 +1,41 @@
+name: Feature request / 功能建议
+description: 提一个新功能或改进
+title: "[feat] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 使用场景
+      description: 你在做哪类短剧/漫剧时卡住了，希望省掉哪段手工活
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 期望的行为
+      description: 界面位置、输入输出、默认值，越具体越好
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 涉及范围
+      options:
+        - 剧本导入与拆集
+        - 总纲 / 资产 / 分集 / 分镜
+        - 提示词与模型方言
+        - 生成（图片 / 视频 / 音色）
+        - 校验规则与质检
+        - 项目存储与导出
+        - 界面与交互
+        - 文档 / 开发体验
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 已搜索过现有 issue 与 README，确认不是已有功能
+          required: true
